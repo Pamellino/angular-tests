@@ -2,4 +2,5 @@
 choose-number works!
 </p>
 
-<input type="number" [(ngModel)]="progval"/>
+<button (click)="setProgVal()">test</button>
+<input type="number" [(ngModel)]="progval"  (change)="setProgVal()"/>

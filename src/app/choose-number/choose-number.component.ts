@@ -1,4 +1,5 @@
 import {  Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-choose-number',
@@ -8,10 +9,19 @@ import {  Component, OnInit } from '@angular/core';
 export class ChooseNumberComponent implements OnInit {
 
   progval : number;
+  
 
-  constructor() { }
+  constructor(private _dataService: DataService) { 
+
+  }
 
   ngOnInit() {
+    this.progval=0;
   }
+
+  setProgVal(){
+      this._dataService.setOption("progval",this.progval);
+  }
+
 
 }

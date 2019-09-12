@@ -1,5 +1,6 @@
 import { Input, Component, OnInit } from '@angular/core';
 import {NgbProgressbarConfig} from '@ng-bootstrap/ng-bootstrap';
+import { DataService } from '../data.service'  
 
 @Component({
   selector: 'app-navigator-panel',
@@ -8,11 +9,12 @@ import {NgbProgressbarConfig} from '@ng-bootstrap/ng-bootstrap';
   providers: [NgbProgressbarConfig] // add the NgbProgressbarConfig to the component providers
 })
 export class NavigatorPanelComponent implements OnInit {
-  @Input() progval : number;
+  progval : number;
   config;
   
 
-  constructor(config: NgbProgressbarConfig) { 
+  constructor(config: NgbProgressbarConfig,
+              _dataService: DataService) { 
     this.config = config;
     this.config.max = 1000;
     this.config.striped = true;
@@ -25,8 +27,12 @@ export class NavigatorPanelComponent implements OnInit {
 
   ngOnInit() {
     // customize default values of progress bars used by this component tree
-
+    this.progval = 230;
     
+  }
+
+  getProgVal(){
+    this._dataService.data.subscribe(message => this.message = message)this._dataService.getOption("progVal");
   }
 
 }
