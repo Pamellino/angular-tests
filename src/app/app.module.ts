@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -7,7 +8,7 @@ import { HelloComponent } from './hello.component';
 import { NavigatorPanelComponent } from './navigator-panel/navigator-panel.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
+  imports:      [ NgbModule, BrowserModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent, NavigatorPanelComponent ],
   bootstrap:    [ AppComponent ]
 })
