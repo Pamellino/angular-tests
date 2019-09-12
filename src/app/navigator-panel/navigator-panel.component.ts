@@ -14,7 +14,7 @@ export class NavigatorPanelComponent implements OnInit {
   
 
   constructor(config: NgbProgressbarConfig,
-              _dataService: DataService) { 
+              S_Data: DataService) { 
     this.config = config;
     this.config.max = 1000;
     this.config.striped = true;
@@ -23,16 +23,22 @@ export class NavigatorPanelComponent implements OnInit {
     this.config.showValue = true;
     this.config.striped = true;
     this.config.height = '30px';
-  }
-
-  ngOnInit() {
-    // customize default values of progress bars used by this component tree
-    this.progval = 230;
     
   }
 
+
   getProgVal(){
-    this._dataService.data.subscribe(message => this.message = message)this._dataService.getOption("progVal");
+  }
+
+  message:string;
+
+
+  ngOnInit() {
+    this.S_Data.currentMessage.subscribe(message => this.message = message)
+  }
+
+  newMessage() {
+    this.S_Data.changeMessage("Hello from Sibling")
   }
 
 }
