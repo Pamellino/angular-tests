@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
 import { NavigatorPanelComponent } from './navigator-panel/navigator-panel.component';
+import { ChooseNumberComponent } from './choose-number/choose-number.component';
+import { DataServiceService } from './data-service.service';
 
 @NgModule({
   imports:      [ NgbModule, BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, NavigatorPanelComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [ AppComponent, NavigatorPanelComponent, ChooseNumberComponent ],
+  bootstrap:    [ AppComponent ],
+  providers: [DataServiceService]
 })
 export class AppModule { }
