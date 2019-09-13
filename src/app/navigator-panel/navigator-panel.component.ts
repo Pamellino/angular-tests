@@ -14,7 +14,7 @@ export class NavigatorPanelComponent implements OnInit {
   constructor(config: NgbProgressbarConfig,
     public dataService: DataService) {
     this.config = config;
-    this.config.max = 1000;
+    this.config.max = 100;
     this.config.striped = true;
     this.config.animated = true;
     this.config.type = 'success';

@@ -8,13 +8,15 @@ export class DataService {
     if (typeof this._data[key] === 'undefined') {
       return null;
     }
+
+    console.log("get",key, this._data[key]);
     return this._data[key];
   };
   setData(key: string, value: string) {
-    //if (this._data[key] !== value) {
-    //  console.log(key, value);
+    if (this._data[key] !== value) {
+      console.log("set", key, value);
        this._data[key] = value;
-    //}
+    }
   };
 
   constructor() {

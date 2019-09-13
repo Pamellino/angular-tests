@@ -8,7 +8,12 @@ import { DataService } from '../data.service';
 })
 export class ChooseNumberComponent implements OnInit {
 
-  set progVal(value: number) {
+  set progVal(value: string) {
+    //console.log(value);
+    if(value === null){ 
+      this.dataService.setData("progVal","0");
+      return;
+    }
     this.dataService.setData("progVal", value.toString());
   }
 
