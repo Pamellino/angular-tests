@@ -7,11 +7,10 @@ import { AppComponent } from './app.component';
 import { NavigatorPanelComponent } from './navigator-panel/navigator-panel.component';
 import { ChooseNumberComponent } from './choose-number/choose-number.component';
 import { DataService } from './data.service';
-import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   imports:      [ NgbModule, BrowserModule, FormsModule ],
-  declarations: [ AppComponent, NavigatorPanelComponent, ChooseNumberComponent, MainPageComponent ],
+  declarations: [ AppComponent, NavigatorPanelComponent, ChooseNumberComponent ],
   bootstrap:    [ AppComponent ],
   providers: [DataService]
 })
