@@ -9,9 +9,7 @@ import { DataService } from '../data.service'
   providers: [NgbProgressbarConfig] // add the NgbProgressbarConfig to the component providers
 })
 export class NavigatorPanelComponent implements OnInit {
-  progval: number;
   config;
-  S_Data: DataService;
 
   constructor(config: NgbProgressbarConfig,
     public dataService: DataService) {
@@ -23,14 +21,17 @@ export class NavigatorPanelComponent implements OnInit {
     this.config.showValue = true;
     this.config.striped = true;
     this.config.height = '30px';
-
+ 
   }
 
   get progVal():string { 
-    return this.dataService.data.progVal; 
+    let d = this.dataService.getData("progVal"); 
+    console.log(d)
+    return d; 
   } 
   set progVal(value: string) { 
-    this.dataService.data.progVal = value; 
+    console.log(value);
+    this.dataService.setData("progVal",value); 
   }
   ngOnInit() {
   }
