@@ -26,14 +26,11 @@ export class NavigatorPanelComponent implements OnInit {
 
   }
 
-  getProgVal() {
-  }
-
-  get data():string { 
-    return this.dataService.serviceData; 
+  get progVal():string { 
+    return this.dataService.data.progVal; 
   } 
-  set data(value: string) { 
-    this.dataService.serviceData = value; 
+  set progVal(value: string) { 
+    this.dataService.data.progVal = value; 
   }
   ngOnInit() {
   }
