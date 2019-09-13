@@ -13,7 +13,11 @@ export class ChooseNumberComponent implements OnInit {
   }
 
   set progVal(value: string) {
-    this.dataService.setData("text", value());
+    this.dataService.setData("text", value);
+  }
+
+  set text(value:string){
+    this.dataService.setData("text", value);
   }
 
   constructor(public dataService: DataService) { }

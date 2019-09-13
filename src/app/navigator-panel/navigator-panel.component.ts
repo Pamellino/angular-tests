@@ -24,6 +24,10 @@ export class NavigatorPanelComponent implements OnInit {
  
   }
 
+  get text():string {
+    return this.dataService.getData("text");
+  }
+
   get progVal():string { 
     return this.dataService.getData("progVal"); 
   } 
